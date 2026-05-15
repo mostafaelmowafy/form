@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 // ── ضع رابط الـ Web App هنا بعد النشر ────────────────────
 const GOOGLE_SHEET_URL =
-  'https://script.google.com/macros/s/AKfycbwlqKENKlPloyHmsneBHDfVvLGksQOheaGPAAk3lmm6prx7vYsDmbTi_sI9Lzj9xX2p2Q/exec';
+  'https://script.google.com/macros/s/AKfycby0OEGujYYG_YKwfaBts1aCp1oyTwXIOAdayEoWshXNcqmoOGNH7XjAyMexAq6hfd6l/exec';
 
 const GOVERNORATES = [
   'القاهرة',
