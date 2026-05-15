@@ -223,7 +223,14 @@ export default function CustomerServiceForm() {
         }}
       >
         <div style={{ fontSize: 56 }}>✅</div>
-        <h2 style={{ fontSize: 28, fontWeight: 800, marginTop: 20 }}>
+        <h2
+          style={{
+            fontSize: 28,
+            fontWeight: 800,
+            marginTop: 20,
+            color: C.white,
+          }}
+        >
           تم تسجيل بياناتك بنجاح.
         </h2>
         <p style={{ color: C.dim, fontSize: 22 }}>
