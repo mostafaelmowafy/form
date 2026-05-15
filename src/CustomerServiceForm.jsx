@@ -267,7 +267,7 @@ export default function CustomerServiceForm() {
           }}
         >
           <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>
-            Skilled<span style={{ color: C.blue }}>oo</span>
+            Jop<span style={{ color: C.blue }}>lio</span>
           </h1>
           <p style={{ color: C.dim, fontSize: 14 }}>
             برجاء تسجيل البيانات وسوف نتواصل معكم في أقرب وقت ممكن
