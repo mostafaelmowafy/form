@@ -181,6 +181,10 @@ export default function CustomerServiceForm() {
     if (!form.exp) newErrors.exp = 'برجاء تحديد حالة الخبرة';
     if (!form.avail) newErrors.avail = 'برجاء تحديد مدى التوافر';
 
+    // ── التعديل الأول: التحقق من حقل خبراتك السابقة ───────
+    if (!form.notes.trim())
+      newErrors.notes = 'برجاء كتابة خبراتك السابقة أو اكتب (لا يوجد)';
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -336,7 +340,7 @@ export default function CustomerServiceForm() {
             />
           </Field>
 
-          {/* الخبرة - تم تعديل الـ Values إلى العربية */}
+          {/* الخبرة */}
           <p
             style={{
               fontSize: 13,
@@ -369,7 +373,7 @@ export default function CustomerServiceForm() {
             </p>
           )}
 
-          {/* التوافر - تم تعديل الـ Values إلى العربية */}
+          {/* التوافر */}
           <p
             style={{
               fontSize: 13,
@@ -410,7 +414,8 @@ export default function CustomerServiceForm() {
             </p>
           )}
 
-          <Field label="خبراتك السابقة" icon="📝">
+          {/* ── التعديل الثاني: ربط خاصية الـ error بحقل التكست بوكس ─────── */}
+          <Field label="خبراتك السابقة" icon="📝" error={errors.notes}>
             <textarea
               placeholder="اكتب هنا خبراتك السابقة..."
               value={form.notes}
