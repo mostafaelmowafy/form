@@ -98,7 +98,6 @@ function RadioOption({ name, value, label, checked, onChange }) {
         display: 'flex',
         alignItems: 'center',
         gap: 10,
-        // flex: 1,
         minWidth: 120,
         padding: '11px 14px',
         border: `1px solid ${checked ? C.blue : C.border}`,
@@ -157,7 +156,6 @@ export default function CustomerServiceForm() {
 
   const update = (key, value) => {
     setForm((prev) => ({ ...prev, [key]: value }));
-    // مسح الخطأ بمجرد الكتابة
     if (errors[key]) setErrors((prev) => ({ ...prev, [key]: null }));
   };
 
@@ -166,7 +164,6 @@ export default function CustomerServiceForm() {
     const phoneRegex =
       /^(?:(?:010|011|015)[0-9]{8}|(?:0127|0128|0120|0122|0121)[0-9]{7})$/;
 
-    // تنظيف وتحويل رقم الهاتف
     const cleanPhone = convertArabicNumsToEnglish(form.phone.trim());
 
     if (!form.name.trim()) newErrors.name = 'يجب إدخال الاسم بالكامل';
@@ -244,7 +241,6 @@ export default function CustomerServiceForm() {
         body { background: ${C.bg}; }
         input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.3); }
         select option { background: #0c1a30; }
-        
       `}</style>
 
       <div
@@ -333,7 +329,7 @@ export default function CustomerServiceForm() {
             />
           </Field>
 
-          {/* الخبرة */}
+          {/* الخبرة - تم تعديل الـ Values إلى العربية */}
           <p
             style={{
               fontSize: 13,
@@ -347,8 +343,8 @@ export default function CustomerServiceForm() {
           </p>
           <div style={{ display: 'flex', gap: 8, marginBottom: 4 }}>
             {[
-              ['yes', 'نعم'],
-              ['no', 'لا'],
+              ['نعم', 'نعم'],
+              ['لا', 'لا'],
             ].map(([v, l]) => (
               <RadioOption
                 key={v}
@@ -366,7 +362,7 @@ export default function CustomerServiceForm() {
             </p>
           )}
 
-          {/* التوافر */}
+          {/* التوافر - تم تعديل الـ Values إلى العربية */}
           <p
             style={{
               fontSize: 13,
@@ -387,9 +383,9 @@ export default function CustomerServiceForm() {
             }}
           >
             {[
-              ['free', 'أنا متفرغ بالفعل'],
-              ['will', 'هتفرغ لو اتقبلت'],
-              ['part', 'متاح Part-Time'],
+              ['أنا متفرغ بالفعل', 'أنا متفرغ بالفعل'],
+              ['هتفرغ لو اتقبلت', 'هتفرغ لو اتقبلت'],
+              ['متاح Part-Time', 'متاح Part-Time'],
             ].map(([v, l]) => (
               <RadioOption
                 key={v}
